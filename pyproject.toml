@@ -1,7 +1,7 @@
 [project]
 name = "Comfyui_FMJ_SP"
 description = "Generate random prompts easily for FMJ."
-version = "1.0"
+version = "1.0.1"
 license = { file = "LICENSE" }
 
 [project.urls]

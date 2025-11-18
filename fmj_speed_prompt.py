@@ -56,7 +56,7 @@ class FMJSpeedPrompt:
     RETURN_TYPES = ("STRING", "STRING")
     RETURN_NAMES = ("prompt", "debug_info")
     FUNCTION = "generate_prompt"
-    CATEGORY = "FMJ"
+    CATEGORY = "🌀FMJ"
     OUTPUT_NODE = True
 
     def generate_prompt(self, seed, extra_prompt, **kwargs):

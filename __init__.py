@@ -8,8 +8,5 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "FMJSpeedPrompt": "FMJ-Speed-Prompt"
+    "FMJSpeedPrompt": "⚡FMJ-Speed-Prompt",
 }
-
-WEB_DIRECTORY = "./web"  # optionnel, si tu veux ajouter du JS/CSS plus tard
-__all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

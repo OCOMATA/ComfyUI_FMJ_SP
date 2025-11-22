@@ -1,0 +1,330 @@
+{
+  "id": "c9fa7edb-6045-4ecb-bc64-f86fccfe617f",
+  "revision": 0,
+  "last_node_id": 36,
+  "last_link_id": 96,
+  "nodes": [
+    {
+      "id": 17,
+      "type": "Seed (rgthree)",
+      "pos": [
+        -6130,
+        -5400
+      ],
+      "size": [
+        290,
+        130
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "dir": 4,
+          "name": "SEED",
+          "shape": 3,
+          "type": "INT",
+          "links": [
+            93
+          ]
+        }
+      ],
+      "title": "Seed PROMPT LLM",
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "1.0.2510052058",
+        "randomMax": 1125899906842624,
+        "randomMin": 0
+      },
+      "widgets_values": [
+        -1,
+        "",
+        "",
+        ""
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 15,
+      "type": "easy positive",
+      "pos": [
+        -6130,
+        -5210
+      ],
+      "size": [
+        290,
+        110
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "STRING",
+          "links": [
+            94
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "499ed4eafc3ad9d0f26e2cad40219a9e0d613fe5",
+        "Node name for S&R": "easy positive"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 4,
+      "type": "easy showAnything",
+      "pos": [
+        -5070,
+        -5400
+      ],
+      "size": [
+        310,
+        340
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 96
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "499ed4eafc3ad9d0f26e2cad40219a9e0d613fe5",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "Seed: 837635442786115\nExtra: \nAccidents Industry Malapris: disabled\nActions: disabled\nAnimals: disabled\nArtistic Style: in the style of italian renaissance portrait painting [random]\nArtists: disabled\nCameras: disabled\nCelebrity Man: disabled\nCelebrity Woman: disabled\nEdit Change Background: disabled\nEdit Character Consistency: disabled\nEdit Emotional Poses: disabled\nEdit Key Lora: disabled\nEdit Key Verbs: disabled\nEdit Nano Banana: disabled\nEdit Object Modification: disabled\nEdit Photo: Using the provided image of a living room, change only the blue sofa to be a vintage, brown leather chesterfield sofa. Keep the rest of the room, including the pillows on the sofa and the lighting, unchanged. [random]\nEdit Scene Transformation: disabled\nEdit Style Transfer: disabled\nEdit Text Editing: disabled\nEdit Transform Man v2: disabled\nEdit Transform Man: disabled\nEdit Transform Woman v2: disabled\nEdit Transform Woman: disabled\nEdit it's me 1: disabled\nEdit it's me 2: disabled\nEffects Realistic AdelAI: disabled\nEras Malapris: disabled\nErotic OCOMA: disabled\nExpressions Malapris: disabled\nEyes Style: disabled\nFashion: disabled\nFictional Characters: disabled\nFilms Realistic AdelAI: disabled\nFilms Scenes Malapris: disabled\nHaircolors Thomas Buyle: disabled\nHaircuts Thomas Buyle: disabled\nHumanoids: disabled\nImage Quality: disabled\nLandscapes: disabled\nLighting: disabled\nLocations: disabled\nMan: disabled\nMeubles Armoires Lolo Lerigolo: disabled\nMeubles Tables Lolo Lerigolo: disabled\nPlaces: disabled\nPlanet Philippe Joye: disabled\nPrevention Malapris: disabled\nRetro Woman Lolo Lerigolo: disabled\nShotstyle: disabled\nSky Malapris OCOMA: disabled\nSpecial Places: disabled\nSpeed Prompt Collection01: disabled\nSpeed Prompt Collection02: disabled\nSports Malapris OCOMA: disabled\nStrange Building Lolo Lerigolo: disabled\nStrange Place Lolo Lerigolo: disabled\nStyle Arts: disabled\nStyles Realistic AdelAI: disabled\nSuperheros Lolo Lerigolo: disabled\nVehicles: disabled\nVisual Effects Lolo Lerigolo: disabled\nWoman Dress Malapris PJ: disabled\nWoman: disabled"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "easy showAnything",
+      "pos": [
+        -5430,
+        -5400
+      ],
+      "size": [
+        340,
+        340
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 95
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "499ed4eafc3ad9d0f26e2cad40219a9e0d613fe5",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "in the style of italian renaissance portrait painting, Using the provided image of a living room, change only the blue sofa to be a vintage, brown leather chesterfield sofa. Keep the rest of the room, including the pillows on the sofa and the lighting, unchanged."
+      ]
+    },
+    {
+      "id": 36,
+      "type": "FMJSpeedPrompt",
+      "pos": [
+        -5820,
+        -5400
+      ],
+      "size": [
+        347.75999450683594,
+        1638
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 93
+        },
+        {
+          "name": "extra_prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "extra_prompt"
+          },
+          "link": 94
+        }
+      ],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            95
+          ]
+        },
+        {
+          "name": "debug_info",
+          "type": "STRING",
+          "links": [
+            96
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI_FMJ_SP",
+        "ver": "697ec278a157d1b4c0e6d60f7be025fd4cfd7caf",
+        "Node name for S&R": "FMJSpeedPrompt"
+      },
+      "widgets_values": [
+        232710684941802,
+        "randomize",
+        "",
+        "disabled",
+        "disabled",
+        "disabled",
+        "random",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "random",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled"
+      ]
+    }
+  ],
+  "links": [
+    [
+      93,
+      17,
+      0,
+      36,
+      0,
+      "INT"
+    ],
+    [
+      94,
+      15,
+      0,
+      36,
+      1,
+      "STRING"
+    ],
+    [
+      95,
+      36,
+      0,
+      2,
+      0,
+      "*"
+    ],
+    [
+      96,
+      36,
+      1,
+      4,
+      0,
+      "*"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.5706233412220003,
+      "offset": [
+        7376.485754372609,
+        5555.486644222546
+      ]
+    },
+    "frontendVersion": "1.28.8"
+  },
+  "version": 0.4
+}

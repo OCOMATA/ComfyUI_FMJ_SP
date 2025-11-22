@@ -1,8 +1,8 @@
 {
   "id": "c9fa7edb-6045-4ecb-bc64-f86fccfe617f",
   "revision": 0,
-  "last_node_id": 36,
-  "last_link_id": 96,
+  "last_node_id": 37,
+  "last_link_id": 100,
   "nodes": [
     {
       "id": 17,
@@ -26,7 +26,7 @@
           "shape": 3,
           "type": "INT",
           "links": [
-            93
+            97
           ]
         }
       ],
@@ -66,7 +66,7 @@
           "name": "positive",
           "type": "STRING",
           "links": [
-            94
+            98
           ]
         }
       ],
@@ -100,7 +100,7 @@
           "name": "anything",
           "shape": 7,
           "type": "*",
-          "link": 96
+          "link": 100
         }
       ],
       "outputs": [
@@ -138,7 +138,7 @@
           "name": "anything",
           "shape": 7,
           "type": "*",
-          "link": 95
+          "link": 99
         }
       ],
       "outputs": [
@@ -158,7 +158,7 @@
       ]
     },
     {
-      "id": 36,
+      "id": 37,
       "type": "FMJSpeedPrompt",
       "pos": [
         -5820,
@@ -178,7 +178,7 @@
           "widget": {
             "name": "seed"
           },
-          "link": 93
+          "link": 97
         },
         {
           "name": "extra_prompt",
@@ -186,7 +186,7 @@
           "widget": {
             "name": "extra_prompt"
           },
-          "link": 94
+          "link": 98
         }
       ],
       "outputs": [
@@ -194,30 +194,29 @@
           "name": "prompt",
           "type": "STRING",
           "links": [
-            95
+            99
           ]
         },
         {
           "name": "debug_info",
           "type": "STRING",
           "links": [
-            96
+            100
           ]
         }
       ],
       "properties": {
-        "cnr_id": "ComfyUI_FMJ_SP",
-        "ver": "697ec278a157d1b4c0e6d60f7be025fd4cfd7caf",
+        "cnr_id": "comfyui_fmj_sp",
+        "ver": "1.0.6",
         "Node name for S&R": "FMJSpeedPrompt"
       },
       "widgets_values": [
-        232710684941802,
+        0,
         "randomize",
         "",
         "disabled",
         "disabled",
         "disabled",
-        "random",
         "disabled",
         "disabled",
         "disabled",
@@ -229,7 +228,8 @@
         "disabled",
         "disabled",
         "disabled",
-        "random",
+        "disabled",
+        "disabled",
         "disabled",
         "disabled",
         "disabled",
@@ -282,32 +282,32 @@
   ],
   "links": [
     [
-      93,
+      97,
       17,
       0,
-      36,
+      37,
       0,
       "INT"
     ],
     [
-      94,
+      98,
       15,
       0,
-      36,
+      37,
       1,
       "STRING"
     ],
     [
-      95,
-      36,
+      99,
+      37,
       0,
       2,
       0,
       "*"
     ],
     [
-      96,
-      36,
+      100,
+      37,
       1,
       4,
       0,
@@ -320,8 +320,8 @@
     "ds": {
       "scale": 0.5706233412220003,
       "offset": [
-        7376.485754372609,
-        5555.486644222546
+        7497.698156635088,
+        5562.788582634699
       ]
     },
     "frontendVersion": "1.28.8"

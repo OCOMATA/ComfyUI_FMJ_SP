@@ -4,9 +4,10 @@ import csv
 
 CSV_DIR = os.path.join(os.path.dirname(__file__), "csv")
 
-# Variable de classe pour garder l'état d'incrémentation entre les appels
+# Variables de classe pour garder l'état entre les appels
 # ⚠️ Attention : pas fiable dans tous les contextes (ex: rechargement du workflow)
 _increment_counters = {}
+_decrement_counters = {}
 
 class FMJSpeedPrompt:
     # Couleur de fond du nœud (bleu doux)
@@ -46,8 +47,8 @@ class FMJSpeedPrompt:
             if not lines:
                 lines = ["(vide)"]
 
-            # Ajout du mode "increment"
-            choices = ["disabled", "random", "increment"] + lines
+            # Ajout du mode "decrement" aux choix
+            choices = ["disabled", "random", "increment", "decrement"] + lines
             default_choice = "disabled"
 
             inputs["required"][base_name] = (choices, {"default": default_choice})
@@ -90,7 +91,6 @@ class FMJSpeedPrompt:
                     selected_prompts.append("(erreur increment)")
                     debug_lines.append(f"{key}: erreur increment")
                 else:
-                    # Utilise une clé unique par fichier CSV pour garder l'état
                     counter_key = f"{key}"
                     if counter_key not in _increment_counters:
                         _increment_counters[counter_key] = 0
@@ -98,8 +98,24 @@ class FMJSpeedPrompt:
                     choice = choices[index]
                     selected_prompts.append(choice)
                     debug_lines.append(f"{key}: {choice} [increment #{index}]")
-                    # Incrémente pour la prochaine fois
                     _increment_counters[counter_key] += 1
+
+            elif value == "decrement":
+                choices = self._load_choices(key)
+                if not choices:
+                    selected_prompts.append("(erreur decrement)")
+                    debug_lines.append(f"{key}: erreur decrement")
+                else:
+                    counter_key = f"{key}"
+                    if counter_key not in _decrement_counters:
+                        # Commence à la dernière position (len - 1)
+                        _decrement_counters[counter_key] = len(choices) - 1
+                    index = _decrement_counters[counter_key] % len(choices)
+                    choice = choices[index]
+                    selected_prompts.append(choice)
+                    debug_lines.append(f"{key}: {choice} [decrement #{index}]")
+                    # Décrémente (peut devenir négatif, mais % gère le wrap)
+                    _decrement_counters[counter_key] -= 1
 
             else:
                 # Valeur manuelle (choix fixe)

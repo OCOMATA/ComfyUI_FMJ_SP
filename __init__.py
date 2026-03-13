@@ -1,12 +1,14 @@
-# ComfyUI/custom_nodes/ComfyUI_FMJ_SP/__init__.py
-
+# ComfyUI_FMJ_SP/__init__.py
 from .fmj_speed_prompt import FMJSpeedPrompt
 
-# Mapping obligatoire pour que ComfyUI charge les nœuds
 NODE_CLASS_MAPPINGS = {
-    "FMJSpeedPrompt": FMJSpeedPrompt
+    "✨ FMJ-speed-Prompt": FMJSpeedPrompt
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "FMJSpeedPrompt": "⚡FMJ-Speed-Prompt",
+    "✨ FMJ-speed-Prompt": "⚡ FMJ-Speed-Prompt"
 }
+
+WEB_DIRECTORY = "./js"
+
+__all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS", "WEB_DIRECTORY"]

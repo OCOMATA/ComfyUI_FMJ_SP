@@ -1,0 +1,227 @@
+{
+  "id": "8f08b2ae-41f7-404e-b294-e5dd0b8da2e3",
+  "revision": 0,
+  "last_node_id": 19,
+  "last_link_id": 20,
+  "nodes": [
+    {
+      "id": 2,
+      "type": "easy showAnything",
+      "pos": [
+        -6020.0036110177825,
+        -2860.0048838233924
+      ],
+      "size": [
+        480,
+        440
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 19
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "a3f051f0c3557257fbf62839ed1a4a2442b1ed40",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "Jamie Foxx, Judi Dench, A woman in a flowing skirt twirls in a golden wheat field, sunlight catching her hair, a soft smile on her lips., reading the news, False"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "easy showAnything",
+      "pos": [
+        -6020.0036110177825,
+        -2360.0048838233924
+      ],
+      "size": [
+        480,
+        440
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": 20
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "a3f051f0c3557257fbf62839ed1a4a2442b1ed40",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "Seed: 1070403579354402\nVisibility Toggle: False\ncsv_01_FMJ_Composition: disabled\ncsv_01_FMJ_Environnement: disabled\ncsv_01_FMJ_Lumiere: disabled\ncsv_01_FMJ_Speed Prompt Collection01: disabled\ncsv_01_FMJ_Speed Prompt Collection02: disabled\ncsv_01_FMJ_Speed Prompt Collection03: disabled\ncsv_01_FMJ_Style: disabled\ncsv_01_FMJ_effets: disabled\ncsv_02_Celebrity Man: Jamie Foxx [random]\ncsv_02_Celebrity Woman: Judi Dench [random]\ncsv_02_Erotic OCOMA: A woman in a flowing skirt twirls in a golden wheat field, sunlight catching her hair, a soft smile on her lips. [random]\ncsv_02_Fictional Characters: disabled\ncsv_02_Humanoids: disabled\ncsv_02_Man: disabled\ncsv_02_Retro Woman Lolo Lerigolo: disabled\ncsv_02_Superheros Lolo Lerigolo: disabled\ncsv_02_Woman: disabled\ncsv_03_Edit Change Background: disabled\ncsv_03_Edit Character Consistency: disabled\ncsv_03_Edit Emotional Poses: disabled\ncsv_03_Edit Key Lora: disabled\ncsv_03_Edit Key Verbs: disabled\ncsv_03_Edit Nano Banana: disabled\ncsv_03_Edit Object Modification: disabled\ncsv_03_Edit Photo: disabled\ncsv_03_Edit Scene Transformation: disabled\ncsv_03_Edit Style Transfer: disabled\ncsv_03_Edit Text Editing: disabled\ncsv_03_Edit Transform Man: disabled\ncsv_03_Edit Transform Woman: disabled\ncsv_03_Edit it's me: disabled\ncsv_04_Artistic Style: disabled\ncsv_04_Artists: disabled\ncsv_04_Eras Malapris: disabled\ncsv_04_Style Arts: disabled\ncsv_04_Styles Realistic AdelAI: disabled\ncsv_05_Expressions Malapris: disabled\ncsv_05_Eyes Style: disabled\ncsv_05_Fashion: disabled\ncsv_05_Haircolors Thomas Buyle: disabled\ncsv_05_Haircuts Thomas Buyle: disabled\ncsv_05_Shotstyle: disabled\ncsv_05_Woman Dress Malapris PJ: disabled\ncsv_06_Landscapes: disabled\ncsv_06_Locations: disabled\ncsv_06_Places: disabled\ncsv_06_Planet Philippe Joye: disabled\ncsv_06_Sky Malapris OCOMA: disabled\ncsv_06_Strange Building Lolo Lerigolo: disabled\ncsv_06_Strange Place Lolo Lerigolo: disabled\ncsv_07_06_Special Places: disabled\ncsv_07_Cameras: disabled\ncsv_07_Effects Realistic AdelAI: disabled\ncsv_07_Image Quality: disabled\ncsv_07_Lighting: disabled\ncsv_07_Visual Effects Lolo Lerigolo: disabled\ncsv_08_Accidents Industry Malapris: disabled\ncsv_08_Actions: reading the news [random]\ncsv_08_Animals: disabled\ncsv_08_Films Realistic AdelAI: disabled\ncsv_08_Films Scenes Malapris: disabled\ncsv_08_Meubles Armoires Lolo Lerigolo: disabled\ncsv_08_Meubles Tables Lolo Lerigolo: disabled\ncsv_08_Prevention Malapris: disabled\ncsv_08_Prompt Collection Lolo Lerigolo01: disabled\ncsv_08_Prompt Collection Lolo Lerigolo02: disabled\ncsv_08_Sports Malapris OCOMA: disabled\ncsv_08_Vehicles: disabled"
+      ]
+    },
+    {
+      "id": 19,
+      "type": "✨ FMJ-speed-Prompt",
+      "pos": [
+        -6510.003630091269,
+        -2860.0048838233924
+      ],
+      "size": [
+        460,
+        1806
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            19
+          ]
+        },
+        {
+          "name": "debug_info",
+          "type": "STRING",
+          "links": [
+            20
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_fmj_sp",
+        "ver": "1.13.0",
+        "Node name for S&R": "✨ FMJ-speed-Prompt"
+      },
+      "widgets_values": [
+        246989788932866,
+        "randomize",
+        false,
+        false,
+        false,
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "random",
+        "random",
+        "random",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "random",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled",
+        "disabled"
+      ]
+    }
+  ],
+  "links": [
+    [
+      19,
+      19,
+      0,
+      2,
+      0,
+      "STRING"
+    ],
+    [
+      20,
+      19,
+      1,
+      14,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8,
+      "offset": [
+        7630.961872507651,
+        3138.744517383573
+      ]
+    },
+    "frontendVersion": "1.41.18"
+  },
+  "version": 0.4
+}

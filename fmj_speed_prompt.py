@@ -1,40 +1,35 @@
+# ComfyUI_FMJ_SP/fmj_speed_prompt.py
 import os
 import random
 import csv
 
+# 🔹 Correction: utiliser __file__
 CSV_DIR = os.path.join(os.path.dirname(__file__), "csv")
 
-# Variables de classe pour garder l'état entre les appels
-# ⚠️ Attention : pas fiable dans tous les contextes (ex: rechargement du workflow)
+# Variables de classe
 _increment_counters = {}
 _decrement_counters = {}
 
 class FMJSpeedPrompt:
-    # Couleur de fond du nœud (bleu doux)
-    @classmethod
-    def __init_subclass__(cls, **kwargs):
-        super().__init_subclass__(**kwargs)
-
-    def __init__(self):
-        self.NODE_BG_COLOR = (0.15, 0.25, 0.35)  # Bleu nuit doux
-
     @classmethod
     def INPUT_TYPES(cls):
         csv_files = []
         if os.path.exists(CSV_DIR):
             csv_files = [f for f in os.listdir(CSV_DIR) if f.endswith('.csv')]
         
-        inputs = {
-            "required": {
-                "seed": ("INT", {"default": 0, "min": 0, "max": 0xffffffffffffffff}),
-                "extra_prompt": ("STRING", {"multiline": False, "default": ""}),
-            }
-        }
+        # 🔹 Ajout du bouton RESET
+        inputs = {"required": {
+            "seed": ("INT", {"default": 0, "min": 0, "max": 0xffffffffffffffff}),
+            "toggle_visibility": ("BOOLEAN", {"default": False, "label": "👁 Masquer disabled"}),
+            "reset_all": ("BOOLEAN", {"default": False, "label": "🔄 Reset All"}),
+            "extra_prompt": ("STRING", {"multiline": False, "default": ""}),
+        }}
 
         for filename in sorted(csv_files):
             base_name = os.path.splitext(filename)[0]
             lines = []
             file_path = os.path.join(CSV_DIR, filename)
+            
             try:
                 with open(file_path, 'r', encoding='utf-8') as f:
                     reader = csv.reader(f)
@@ -47,11 +42,11 @@ class FMJSpeedPrompt:
             if not lines:
                 lines = ["(vide)"]
 
-            # Ajout du mode "decrement" aux choix
             choices = ["disabled", "random", "increment", "decrement"] + lines
             default_choice = "disabled"
 
-            inputs["required"][base_name] = (choices, {"default": default_choice})
+            # 🔹 Préfixe "csv_" pour identification JS
+            inputs["required"][f"csv_{base_name}"] = (choices, {"default": default_choice})
 
         return inputs
 
@@ -61,22 +56,22 @@ class FMJSpeedPrompt:
     CATEGORY = "🌀FMJ"
     OUTPUT_NODE = True
 
-    def generate_prompt(self, seed, extra_prompt, **kwargs):
+    def generate_prompt(self, seed, toggle_visibility, reset_all, extra_prompt, **kwargs):
         random.seed(seed)
         selected_prompts = []
-
-        debug_lines = [f"Seed: {seed}", f"Extra: {extra_prompt}"]
+        debug_lines = [f"Seed: {seed}", f"Visibility Toggle: {toggle_visibility}"]
 
         for key, value in kwargs.items():
-            if key in ['seed', 'extra_prompt']:
+            if key in ['seed', 'toggle_visibility', 'reset_all', 'extra_prompt']:
                 continue
 
+            # 🔹 Filtrage backend
             if value == "disabled":
                 debug_lines.append(f"{key}: disabled")
                 continue
 
             elif value == "random":
-                choices = self._load_choices(key)
+                choices = self._load_choices(key.replace("csv_", ""))
                 if choices:
                     choice = random.choice(choices)
                     selected_prompts.append(choice)
@@ -86,7 +81,7 @@ class FMJSpeedPrompt:
                     debug_lines.append(f"{key}: erreur random")
 
             elif value == "increment":
-                choices = self._load_choices(key)
+                choices = self._load_choices(key.replace("csv_", ""))
                 if not choices:
                     selected_prompts.append("(erreur increment)")
                     debug_lines.append(f"{key}: erreur increment")
@@ -101,24 +96,21 @@ class FMJSpeedPrompt:
                     _increment_counters[counter_key] += 1
 
             elif value == "decrement":
-                choices = self._load_choices(key)
+                choices = self._load_choices(key.replace("csv_", ""))
                 if not choices:
                     selected_prompts.append("(erreur decrement)")
                     debug_lines.append(f"{key}: erreur decrement")
                 else:
                     counter_key = f"{key}"
                     if counter_key not in _decrement_counters:
-                        # Commence à la dernière position (len - 1)
                         _decrement_counters[counter_key] = len(choices) - 1
                     index = _decrement_counters[counter_key] % len(choices)
                     choice = choices[index]
                     selected_prompts.append(choice)
                     debug_lines.append(f"{key}: {choice} [decrement #{index}]")
-                    # Décrémente (peut devenir négatif, mais % gère le wrap)
                     _decrement_counters[counter_key] -= 1
 
             else:
-                # Valeur manuelle (choix fixe)
                 selected_prompts.append(value)
                 debug_lines.append(f"{key}: {value} [manual]")
 
